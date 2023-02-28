@@ -9,13 +9,13 @@ class Cabecalho extends Component
     {
         return(
             <>
-                <span><strong>Gabriel Luis Julian</strong></span>
+                <span><strong>Hanna Uwo</strong></span>
                 <br />
                 <br />
-                <span>Idade: 30</span>
+                <span>Idade: 20</span>
                 <br />
                 <br />
-                <img src={foto} />
+                <img src={foto} alt='foto da moça'/>
             </>
         )
     }
