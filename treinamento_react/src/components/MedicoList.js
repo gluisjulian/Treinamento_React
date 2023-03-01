@@ -4,16 +4,26 @@ import React, {Component} from "react";
 class MedicoList extends Component {
         
     state = {
-            medicos : [
-                'Médico 1',
-                'Médico 2',
-                'Médico 3',
-                'Médico 4',
-                'Médico 5',
-                'Dr. House'
-            ],
+            medicos : [],
             novoItem: null
         }
+
+
+        componentDidMount()
+        {
+            fetch('https://telepephc.famema.br:9898/api/grupos').then(response => response.json()).then(data => this.setState({medicos:data}))
+        }
+
+
+        componentDidUpdate(prevprops, prevstates){
+
+        }
+
+
+        componentWillUnmount(){
+
+        }
+
 
         handleChanged = (e) => {
             this.setState({
@@ -36,7 +46,7 @@ class MedicoList extends Component {
                 <span><strong>Centro de custo: {this.props.cc}</strong></span>
                 <ul>
                     <li> { this.props.especialidade } </li>
-                    { this.state.medicos.map(medico => <li key={medico}> {medico}</li>) }
+                    { this.state.medicos.map(medico => <li key={medico.id}> {medico.nome}</li>) }
                 </ul>
 
                 <input type="text" onChange={this.handleChanged}/>
