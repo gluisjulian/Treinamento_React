@@ -40,7 +40,6 @@ class MedicoList extends Component {
 
     render()
     {
-        console.log(this.state.novoItem)
         return(
             <>
                 <span><strong>Centro de custo: {this.props.cc}</strong></span>
